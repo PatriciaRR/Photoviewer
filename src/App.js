@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { PhotoViewer } from "./components/PhotoViewer/PhotoViewer.jsx";
+import { ThumbnailListViewer } from './components/ThumbnailList/ThumbnailList';
+import { ThumbnailImage } from './components/ThumbnailImage/ThumbnailImage.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Photo Viewer</h1>
+      <PhotoViewer imageUrl = "https://i.picsum.photos/id/424/1000/800.jpg?hmac=P8S2OdVsSiU33axhh-vzUnjYWdK5F4z6w1NZHh7ncCc"/>
+      <h2> Select a photo</h2>
+      <ThumbnailListViewer imageUrl = "https://picsum.photos/v2/list" />
     </div>
   );
 }
