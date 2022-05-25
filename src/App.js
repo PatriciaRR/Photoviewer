@@ -1,16 +1,21 @@
-
-import './App.css';
-import { PhotoViewer } from "./components/PhotoViewer/PhotoViewer.jsx";
-import { ThumbnailList } from "./components/ThumbnailList/ThumbnailList.jsx";
-import { ThumbnailImage } from "./components/ThumbnailImage/ThumbnailImage.jsx"
+import { useState } from "react";
+import { PhotoViewer } from "./components/PhotoViewer";
+import { PhotoList } from "./components/PhotoList";
+import "./App.css";
 
 function App() {
+  const [selectedPhoto, setSelectedPhoto] = useState(
+    "https://picsum.photos/id/600/1600/900.jpg"
+  );
   return (
-    <div>
-      <h1 className='title'>React Photo Viewer</h1>
-      <PhotoViewer imageUrl = "https://i.picsum.photos/id/397/600/400.jpg?hmac=t1QU8upMXHdW6Cp2SSXRTcv5WgYj981igInUDGfvokQ"/>
-      <h2 className='heading'> Select a photo</h2>
-      <ThumbnailList imageUrl = "https://picsum.photos/v2/list" />
+    <div className="App">
+      <h1> React Photoviewer</h1>
+      <PhotoViewer selectedPhoto={selectedPhoto} />
+      <h2>Select a photo</h2>
+      <PhotoList
+        selectedPhoto={selectedPhoto}
+        setSelectedPhoto={setSelectedPhoto}
+      />
     </div>
   );
 }

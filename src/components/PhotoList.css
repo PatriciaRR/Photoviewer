@@ -1,0 +1,26 @@
+.photo-list {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.grid-photo {
+  width: 23vw;
+  height: 13vw;
+  transition: all 0.4s ease-in-out;
+}
+
+.grid-photo:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.selected-photo {
+  border: 2px solid #258dff;
+}
